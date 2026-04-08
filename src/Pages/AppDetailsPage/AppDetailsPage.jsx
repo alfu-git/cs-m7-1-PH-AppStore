@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import useApps from "../../hooks/useApps";
 import { HashLoader } from "react-spinners";
 import RatingChart from "../../Components/AppDetailsPage/RatingChart/RatingChart";
+import AppDescription from "../../Components/AppDetailsPage/AppDescription/AppDescription";
 
 const AppDetailsPage = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const AppDetailsPage = () => {
         <div>
           <AppInfo expectedApp={expectedApp} />
           <RatingChart expectedApp={expectedApp} />
+          <AppDescription expectedApp={expectedApp} />
         </div>
       )}
     </>
