@@ -10,7 +10,7 @@ const RootLayout = () => {
         <Navbar />
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 bg-[#F5F5F5]">
         <Outlet />
       </main>
 
