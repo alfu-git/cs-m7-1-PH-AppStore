@@ -42,12 +42,15 @@ const TrendingApps = () => {
             <div>
               <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {allApps.slice(0, 8).map((app) => (
-                <TrendingAppCard key={app.id} app={app} />
-              ))}
+                  <TrendingAppCard key={app.id} app={app} />
+                ))}
               </div>
 
               <div className="mt-10 flex justify-center">
-                <Link to="/apps-page" className="btn border-none shadow-none px-10 h-12 bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-base-100 font-semibold">
+                <Link
+                  to="/apps-page"
+                  className="btn border-none shadow-none px-10 h-12 bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-base-100 font-semibold"
+                >
                   Show All
                 </Link>
               </div>
