@@ -4,8 +4,7 @@ import TrendingAppCard from "../../HomePage/TrendingApps/TrendingAppCard/Trendin
 import useApps from "../../../hooks/useApps";
 
 const AllAppsContainer = () => {
-
-  const {allApps, loading} = useApps();
+  const { allApps, loading } = useApps();
 
   return (
     <section className="mb-20 container mx-auto px-5">
@@ -14,7 +13,7 @@ const AllAppsContainer = () => {
           <div className="mb-4 flex flex-col sm:flex-row gap-y-4 justify-between sm:items-center">
             <div>
               <p className="flex gap-1 items-center text-[#001931] text-2xl font-semibold">
-                <span>(15)</span>
+                <span>({allApps.length})</span>
                 <span>Apps Found</span>
               </p>
             </div>

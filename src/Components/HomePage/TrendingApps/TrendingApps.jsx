@@ -5,8 +5,7 @@ import { Link } from "react-router";
 import useApps from "../../../hooks/useApps";
 
 const TrendingApps = () => {
-
-  const {allApps, loading} = useApps();
+  const { allApps, loading } = useApps();
 
   return (
     <section className="my-20 container mx-auto px-5">

@@ -1,9 +1,13 @@
 import { ArrowDownToLine, Star } from "lucide-react";
 import React from "react";
+import { Link } from "react-router";
 
 const TrendingAppCard = ({ app }) => {
   return (
-    <div className="p-4 bg-base-100 shadow rounded-sm">
+    <Link
+      to={`/apps-page/${app.id}`}
+      className="p-4 bg-base-100 shadow rounded-sm"
+    >
       <div className="mb-4 p-0.5 bg-[#D9D9D9] rounded-lg">
         <figure>
           <img src={app.image} alt={`${app.title} Image`} />
@@ -29,7 +33,7 @@ const TrendingAppCard = ({ app }) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
