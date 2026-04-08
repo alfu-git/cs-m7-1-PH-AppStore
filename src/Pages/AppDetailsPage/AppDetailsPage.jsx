@@ -3,6 +3,7 @@ import AppInfo from "../../Components/AppDetailsPage/AppInfo/AppInfo";
 import { useParams } from "react-router";
 import useApps from "../../hooks/useApps";
 import { HashLoader } from "react-spinners";
+import RatingChart from "../../Components/AppDetailsPage/RatingChart/RatingChart";
 
 const AppDetailsPage = () => {
   const { id } = useParams();
@@ -17,7 +18,10 @@ const AppDetailsPage = () => {
           <HashLoader color="#632EE3" />
         </div>
       ) : (
-        <AppInfo expectedApp={expectedApp} />
+        <div>
+          <AppInfo expectedApp={expectedApp} />
+          <RatingChart expectedApp={expectedApp} />
+        </div>
       )}
     </>
   );
