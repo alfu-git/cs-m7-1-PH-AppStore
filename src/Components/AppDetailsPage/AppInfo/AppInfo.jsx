@@ -1,7 +1,10 @@
 import { ArrowDownToLine, Star, ThumbsUp } from "lucide-react";
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../../Context/AppContext/AppContextProvider";
 
 const AppInfo = ({ expectedApp }) => {
+  const { handleInstallBtn, installBtnStatus } = useContext(AppContext);
+
   return (
     <section className="mt-20 container mx-auto px-5">
       <div>
@@ -68,7 +71,17 @@ const AppInfo = ({ expectedApp }) => {
             </div>
 
             <div>
-              <button className="btn border-none shadow-none px-5 h-13 bg-[#00D390] rounded-sm text-base-100 text-xl font-semibold">
+              <button
+                onClick={() => handleInstallBtn(expectedApp)}
+                className={`
+                  border-none shadow-none px-5 h-13 rounded-sm text-xl font-semibold
+                  ${
+                    installBtnStatus
+                      ? "btn-disabled opacity-50"
+                      : "btn bg-[#00D390] text-base-100"
+                  }
+                  `}
+              >
                 <span>Install Now </span>
                 <span>({expectedApp.size} MB)</span>
               </button>
