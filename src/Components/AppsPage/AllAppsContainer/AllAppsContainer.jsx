@@ -1,24 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { HashLoader } from "react-spinners";
 import TrendingAppCard from "../../HomePage/TrendingApps/TrendingAppCard/TrendingAppCard";
+import useApps from "../../../hooks/useApps";
 
 const AllAppsContainer = () => {
-  const [allApps, setAllApps] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchAllAppsData = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-
-      setTimeout(() => {
-        setAllApps(data);
-        setLoading(false);
-      }, 2000);
-    };
-
-    fetchAllAppsData();
-  }, []);
+  const {allApps, loading} = useApps();
 
   return (
     <section className="mb-20 container mx-auto px-5">
