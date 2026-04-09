@@ -1,7 +1,23 @@
 import { Download, Star } from "lucide-react";
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../../../Context/AppContext/AppContextProvider";
+import { toast } from "react-toastify";
 
 const InstalledAppCard = ({ app }) => {
+
+  const {installedApps, setInstalledApps} = useContext(AppContext);
+
+  const handleUninstallBtn = (app) => {
+    const removeApp = installedApps.filter(a => a.id !== app.id);
+    setInstalledApps(removeApp);
+
+    toast.error(
+      <p>
+        <span className="text-zinc-500 font-bold">{app.title}</span> uninstalled successfully
+      </p>
+    )
+  }
+
   return (
     <div className="p-4 bg-base-100 rounded-sm shadow flex justify-between sm:items-center">
       <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
@@ -29,7 +45,7 @@ const InstalledAppCard = ({ app }) => {
       </div>
 
       <div>
-        <button className="btn border-none shadow-none px-4 h-10.5 bg-[#00D390] rounded-sm text-base-100 font-semibold">
+        <button onClick={() => handleUninstallBtn(app)} className="btn border-none shadow-none px-4 h-10.5 bg-[#00D390] rounded-sm text-base-100 font-semibold">
           Uninstall
         </button>
       </div>
