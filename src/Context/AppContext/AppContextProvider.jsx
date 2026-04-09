@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
   const [installedApps, setInstalledApps] = useState([]);
-  
+
   const handleInstallBtn = (app) => {
     const isAppExist = installedApps.find((a) => a.id === app.id);
 
@@ -22,7 +22,6 @@ const AppContextProvider = ({ children }) => {
       );
     }
   };
-  console.log(installedApps);
 
   const data = {
     handleInstallBtn,

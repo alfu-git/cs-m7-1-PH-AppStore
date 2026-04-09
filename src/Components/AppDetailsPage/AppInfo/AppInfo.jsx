@@ -3,9 +3,9 @@ import React, { useContext } from "react";
 import { AppContext } from "../../../Context/AppContext/AppContextProvider";
 
 const AppInfo = ({ expectedApp }) => {
-  const { handleInstallBtn,installedApps } = useContext(AppContext);
+  const { handleInstallBtn, installedApps } = useContext(AppContext);
 
-  const isInstalled = installedApps.find(app => app.id === expectedApp.id);
+  const isInstalled = installedApps.find((app) => app.id === expectedApp.id);
 
   return (
     <section className="mt-20 container mx-auto px-5">

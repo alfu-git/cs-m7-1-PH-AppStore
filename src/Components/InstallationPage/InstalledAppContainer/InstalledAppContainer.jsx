@@ -4,8 +4,7 @@ import { ChevronDown } from "lucide-react";
 import InstalledAppCard from "./InstalledAppCard/InstalledAppCard";
 
 const InstalledAppContainer = () => {
-
-  const {installedApps} = useContext(AppContext);
+  const { installedApps } = useContext(AppContext);
 
   return (
     <section className="mb-20 container mx-auto px-5">
@@ -18,7 +17,11 @@ const InstalledAppContainer = () => {
 
             <div>
               <div className="dropdown dropdown-end">
-                <div tabIndex={0} role="button" className="btn m-1 bg-transparent border border-[#D2D2D2] rounded-sm text-[#627382]">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn m-1 bg-transparent border border-[#D2D2D2] rounded-sm text-[#627382]"
+                >
                   Sort By <span></span> <ChevronDown />
                 </div>
 
@@ -39,9 +42,9 @@ const InstalledAppContainer = () => {
           </div>
 
           <div className="space-y-4">
-            {
-              installedApps.map(app => <InstalledAppCard key={app.id} app={app} />)
-            }
+            {installedApps.map((app) => (
+              <InstalledAppCard key={app.id} app={app} />
+            ))}
           </div>
         </div>
       </div>
