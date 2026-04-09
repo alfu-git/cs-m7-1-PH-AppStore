@@ -5,6 +5,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
   const [installedApps, setInstalledApps] = useState([]);
+  
   const [installBtnStatus, setInstallBtnStatus] = useState(false);
 
   const handleInstallBtn = (app) => {
