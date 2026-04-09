@@ -6,14 +6,11 @@ export const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
   const [installedApps, setInstalledApps] = useState([]);
   
-  const [installBtnStatus, setInstallBtnStatus] = useState(false);
-
   const handleInstallBtn = (app) => {
     const isAppExist = installedApps.find((a) => a.id === app.id);
 
     if (!isAppExist) {
       setInstalledApps([...installedApps, app]);
-      setInstallBtnStatus(true);
 
       toast.success(
         <p>
@@ -31,7 +28,6 @@ const AppContextProvider = ({ children }) => {
     handleInstallBtn,
     installedApps,
     setInstalledApps,
-    installBtnStatus,
   };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;

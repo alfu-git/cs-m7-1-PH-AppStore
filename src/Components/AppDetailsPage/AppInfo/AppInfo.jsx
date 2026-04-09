@@ -3,7 +3,9 @@ import React, { useContext } from "react";
 import { AppContext } from "../../../Context/AppContext/AppContextProvider";
 
 const AppInfo = ({ expectedApp }) => {
-  const { handleInstallBtn, installBtnStatus } = useContext(AppContext);
+  const { handleInstallBtn,installedApps } = useContext(AppContext);
+
+  const isInstalled = installedApps.find(app => app.id === expectedApp.id);
 
   return (
     <section className="mt-20 container mx-auto px-5">
@@ -76,7 +78,7 @@ const AppInfo = ({ expectedApp }) => {
                 className={`
                   border-none shadow-none px-5 h-13 rounded-sm text-xl font-semibold
                   ${
-                    installBtnStatus
+                    isInstalled
                       ? "btn-disabled opacity-50"
                       : "btn bg-[#00D390] text-base-100"
                   }

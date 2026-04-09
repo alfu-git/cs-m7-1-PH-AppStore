@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const useApps = () => {
-
   const [allApps, setAllApps] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -10,16 +9,14 @@ const useApps = () => {
       const res = await fetch("/data.json");
       const data = await res.json();
 
-      setTimeout(() => {
-        setAllApps(data);
-        setLoading(false);
-      }, 1500);
+      setAllApps(data);
+      setLoading(false);
     };
 
     fetchAllAppsData();
   }, []);
 
-  return {allApps, loading};
+  return { allApps, loading };
 };
 
 export default useApps;
