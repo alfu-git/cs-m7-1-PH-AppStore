@@ -1,16 +1,54 @@
-# React + Vite
+# PH-AppStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**PH-AppStore** is a Single Page Application (SPA) built with React, simulating a simplified app store experience similar to Google Play Store. Users can browse apps, view details, install/uninstall apps, and track installations with interactive charts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Home Page**  
+  - Banner and stats section  
+  - Featured apps with a "Show All" button linking to the Apps Page  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Apps Page**  
+  - Displays all available apps  
+  - App details page with description, rating bar chart, and install button  
 
-## Expanding the ESLint configuration
+- **Installation Page**  
+  - Lists all installed apps  
+  - Pie chart showing total apps vs installed apps  
+  - Uninstall buttons for each app with feedback  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Navigation**  
+  - Persistent Navbar and Footer across all pages  
+  - Smooth routing between pages using React Router  
+
+- **Interactive UX**  
+  - Install/Uninstall apps with toast notifications  
+  - Dynamic charts using `react-recharts`  
+  - Fully responsive UI with TailwindCSS and DaisyUI  
+
+---
+
+## Technology Stack
+
+- **Frontend:** React, JavaScript, HTML  
+- **Styling:** TailwindCSS, DaisyUI  
+- **Routing:** React Router  
+- **Notifications:** React Toastify  
+- **Charts:** React Recharts  
+
+---
+
+## What I Learned
+
+- Building SPAs with React and React Router  
+- Creating and customizing bar & pie charts   
+
+---
+
+## Installation
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/alfu-git/cs-m7-1-PH-AppStore
